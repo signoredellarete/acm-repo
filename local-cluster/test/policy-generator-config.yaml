@@ -3,7 +3,7 @@ kind: PolicyGenerator
 metadata:
   name: namespace-test
 policyDefaults:
-  namespace: policies
+  namespace: acm-sub-app-01
   placement:
     clusterSelectors:
       name: "local-cluster"
