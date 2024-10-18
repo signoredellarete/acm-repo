@@ -1,0 +1,17 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: namespace-test
+policyDefaults:
+  namespace: policies
+  placement:
+    clusterSelectors:
+      matchLabels:
+        local-cluster: 'true'
+  remediationAction: enforce
+  complianceType: mustonlyhave
+policies:
+  - name: namespace-test
+    manifests:
+      - path: namespace-test.yaml
