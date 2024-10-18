@@ -9,7 +9,8 @@ policyDefaults:
     clusterSelectors:
       matchLabels:
         local-cluster: 'true'
-  remediationAction: enforce
+  remediationAction: inform
+  # remediationAction: enforce
   complianceType: mustonlyhave
 policies:
   - name: namespace-test
