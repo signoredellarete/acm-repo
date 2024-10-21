@@ -11,7 +11,8 @@ policyDefaults:
         local-cluster: 'true'
   # remediationAction: inform
   remediationAction: enforce
-  complianceType: mustonlyhave
+  # complianceType: mustonlyhave
+  complianceType: musthave
 policies:
   - name: namespace-test
     manifests:
