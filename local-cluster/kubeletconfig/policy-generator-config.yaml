@@ -1,0 +1,20 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: kubeletconfig-dynamic-node
+policyDefaults:
+  namespace: policies
+  placement:
+    clusterSelectors:
+      matchLabels:
+        local-cluster: 'true'
+  # remediationAction: inform
+  remediationAction: enforce
+  # complianceType: mustonlyhave
+  complianceType: musthave
+policies:
+  - name: kubeletconfig-dynamic-node
+    manifests:
+      - path: kubeletconfig-master-dynamic-node.yaml
+      - path: kubeletconfig-worker-dynamic-node.yaml
