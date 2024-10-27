@@ -6,3 +6,12 @@ metadata:
     kubernetes.io/metadata.name: openshift-logging
   annotations:
     quota.openshift.io/cluster-resource-override-enabled: "false"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: quay-enterprise
+  labels:
+    kubernetes.io/metadata.name: quay-enterprise
+  annotations:
+    quota.openshift.io/cluster-resource-override-enabled: "false"

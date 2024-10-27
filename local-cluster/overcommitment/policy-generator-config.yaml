@@ -16,4 +16,4 @@ policyDefaults:
 policies:
   - name: overcommitment-disabled
     manifests:
-      - path: ns_openshift-logging.yaml
+      - path: namespaces.yaml
