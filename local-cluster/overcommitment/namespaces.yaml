@@ -4,6 +4,7 @@ metadata:
   name: openshift-logging
   labels:
     kubernetes.io/metadata.name: openshift-logging
+    clusterresourceoverrides.admission.autoscaling.openshift.io/enabled: "true"
   annotations:
     quota.openshift.io/cluster-resource-override-enabled: "false"
 ---
