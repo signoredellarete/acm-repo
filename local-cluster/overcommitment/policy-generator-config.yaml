@@ -1,0 +1,19 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: overcommitment-disabled
+policyDefaults:
+  namespace: policies
+  placement:
+    clusterSelectors:
+      matchLabels:
+        local-cluster: 'true'
+  # remediationAction: inform
+  remediationAction: enforce
+  # complianceType: mustonlyhave
+  complianceType: musthave
+policies:
+  - name: overcommitment-disabled
+    manifests:
+      - path: ns_openshift-logging.yaml
