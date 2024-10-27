@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - overcommitment
 - kubeletconfig
+- logging
