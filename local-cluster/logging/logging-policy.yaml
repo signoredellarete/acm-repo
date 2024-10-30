@@ -1,12 +1,6 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Namespace
 metadata:
-  name: logging-loki-distributor
-  namespace: openshift-logging
-spec:
-  replicas: 1
-  resources:
-    requests:
-      cpu: 550m
-      memory: 1Gi
-      
+  name: openshift-logging
+  labels:
+    kubernetes.io/metadata.name: openshift-logging
