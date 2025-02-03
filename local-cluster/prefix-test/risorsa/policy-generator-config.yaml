@@ -1,0 +1,19 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: prefix-test
+policyDefaults:
+  namespace: policies
+  placement:
+    clusterSelectors:
+      matchLabels:
+        local-cluster: 'true'
+  # remediationAction: inform
+  remediationAction: enforce
+  # complianceType: mustonlyhave
+  complianceType: musthave
+policies:
+  - name: prefix-test
+    manifests:
+      - path: namespace-prefix-test.yaml
