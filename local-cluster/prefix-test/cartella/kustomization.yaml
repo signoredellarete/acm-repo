@@ -1,3 +1,2 @@
-namePrefix: my-prefix-
 generators:
   - policy-generator-config.yaml
