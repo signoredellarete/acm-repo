@@ -11,4 +11,6 @@ vars:
   fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
 
 resources:
-#- cartella
+  - polycy-ns-cartella-3.yaml
+  - placement-local-cluster.yaml
+  - placementbinding-local-cluster.yaml
