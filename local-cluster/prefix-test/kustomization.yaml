@@ -14,3 +14,4 @@ resources:
   - polycy-ns-cartella-3.yaml
   - placement-local-cluster.yaml
   - placementbinding-local-cluster.yaml
+  - namespace-test.yaml
