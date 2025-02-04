@@ -4,19 +4,23 @@ kind: Kustomization
 
 #namePrefix: eccolo-
 
-configMapGenerator:
-  - name: cluster-labels-config-local-cluster
-    literals:
-      - clusterSelectorLabel=local-cluster
+# configMapGenerator:
+#   - name: cluster-labels-config-local-cluster
+#     literals:
+#       - clusterSelectorLabel=local-cluster
 
-vars:
-  - name: CLUSTER_SELECTOR_LABEL
-    objref:
-      kind: ConfigMap
-      name: cluster-labels-config-local-cluster
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.clusterSelectorLabel
+configMapGenerator:
+  - name: cluster-labels-config
+    envs: [environment.properties]
+
+# vars:
+#   - name: CLUSTER_SELECTOR_LABEL
+#     objref:
+#       kind: ConfigMap
+#       name: cluster-labels-config-local-cluster
+#       apiVersion: v1
+#     fieldref:
+#       fieldpath: data.clusterSelectorLabel
 
 resources:
 - overcommitment
