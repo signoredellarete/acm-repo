@@ -1,0 +1,29 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: polycy-ns-cartella-3
+  namespace: policies
+spec:
+  disabled: false
+  remediationAction: enforce
+  policy-templates:
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: polycy-ns-cartella-3
+        spec:
+          remediationAction: enforce
+          severity: high
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                kind: Namespace
+                apiVersion: v1
+                metadata:
+                  name: cartella-3
+                  labels:
+                    kubernetes.io/metadata.name: test
+                    mylabel: $(CLUSTER_SELECTOR_LABEL)
+          pruneObjectBehavior: DeleteIfCreated
+

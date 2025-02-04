@@ -18,17 +18,17 @@ kind: Kustomization
 #     fieldref:
 #       fieldpath: data.clusterSelectorLabel
 
-configMapGenerator:
-  - name: cluster-labels-config
-    envs: [environment.properties]
+# configMapGenerator:
+#   - name: cluster-labels-config
+#     envs: [environment.properties]
 
-vars:
-- name: CLUSTER_SELECTOR_LABEL
-  objref: { kind: ConfigMap, name: cluster-labels-config, apiVersion: v1 }
-  fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
+# vars:
+# - name: CLUSTER_SELECTOR_LABEL
+#   objref: { kind: ConfigMap, name: cluster-labels-config, apiVersion: v1 }
+#   fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
 
 resources:
 - overcommitment
 - kubeletconfig
-- prefix-test
+- zorro
 #- logging

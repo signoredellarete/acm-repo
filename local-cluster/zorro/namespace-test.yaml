@@ -4,4 +4,4 @@ metadata:
   name: test
   labels:
     kubernetes.io/metadata.name: test
-    mylabel2: $(CLUSTER_SELECTOR_LABEL)
+    # mylabel2: $(CLUSTER_SELECTOR_LABEL)
