@@ -8,7 +8,7 @@ policyDefaults:
   placement:
     clusterSelectors:
       matchLabels:
-        ${CLUSTER_SELECTOR_LABEL}: 'true'
+        $(CLUSTER_SELECTOR_LABEL): 'true'
   # remediationAction: inform
   remediationAction: enforce
   # complianceType: mustonlyhave
