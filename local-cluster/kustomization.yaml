@@ -9,15 +9,6 @@ kind: Kustomization
 #     literals:
 #       - clusterSelectorLabel=local-cluster
 
-configMapGenerator:
-  - name: cluster-labels-config
-    envs: [environment.properties]
-
-vars:
-- name: CLUSTER_SELECTOR_LABEL
-  objref: { kind: ConfigMap, name: cluster-labels-config, apiVersion: v1 }
-  fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
-
 # vars:
 #   - name: CLUSTER_SELECTOR_LABEL
 #     objref:
@@ -26,6 +17,15 @@ vars:
 #       apiVersion: v1
 #     fieldref:
 #       fieldpath: data.clusterSelectorLabel
+
+# configMapGenerator:
+#   - name: cluster-labels-config
+#     envs: [environment.properties]
+
+# vars:
+# - name: CLUSTER_SELECTOR_LABEL
+#   objref: { kind: ConfigMap, name: cluster-labels-config, apiVersion: v1 }
+#   fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
 
 resources:
 - overcommitment
