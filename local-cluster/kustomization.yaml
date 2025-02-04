@@ -31,4 +31,5 @@ resources:
 - overcommitment
 - kubeletconfig
 - zorro
+- test
 #- logging
