@@ -11,6 +11,4 @@ vars:
   fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
 
 resources:
-- cartella
-- cartella2
-- cartella3
+#- cartella
