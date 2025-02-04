@@ -22,4 +22,5 @@ resources:
 - overcommitment
 - kubeletconfig
 - prefix-test
+- nmstate
 #- logging
