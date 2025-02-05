@@ -1,4 +1,4 @@
 resources:
-- instal-nmstate-operator-placement.yaml
-- instal-nmstate-operator-placementbinding.yaml
 - nmstate-operator.yaml
+generators:
+  - policy-generator-config.yaml

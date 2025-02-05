@@ -1,0 +1,20 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: nmstate-placements
+policyDefaults:
+  namespace: policies
+  placement:
+    clusterSelectors:
+      matchLabels:
+        local-cluster: 'true'
+  # remediationAction: inform
+  remediationAction: enforce
+  # complianceType: mustonlyhave
+  complianceType: musthave
+policies:
+  - name: nmstate-placements
+    manifests:
+      - path: instal-nmstate-operator-placement.yaml
+      - path: instal-nmstate-operator-placementbinding.yaml
