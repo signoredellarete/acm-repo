@@ -2,19 +2,25 @@
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
+  annotations:
+    apps.open-cluster-management.io/reconcile-option: merge
+  labels:
+    app: application-01
+    app.kubernetes.io/part-of: application-01
+    apps.open-cluster-management.io/reconcile-rate: high
   name: instal-nmstate-operator-placement
   namespace: policies
 spec:
-  tolerations:
-    - key: cluster.open-cluster-management.io/unreachable
-      operator: Exists
-    - key: cluster.open-cluster-management.io/unavailable
-      operator: Exists
   predicates:
-    - requiredClusterSelector:
-        labelSelector:
-          matchExpressions:
-            - key: name
-              operator: In
-              values:
-                - local-cluster
+  - requiredClusterSelector:
+      labelSelector:
+        matchExpressions:
+        - key: name
+          operator: In
+          values:
+          - local-cluster
+  tolerations:
+  - key: cluster.open-cluster-management.io/unreachable
+    operator: Exists
+  - key: cluster.open-cluster-management.io/unavailable
+    operator: Exists
