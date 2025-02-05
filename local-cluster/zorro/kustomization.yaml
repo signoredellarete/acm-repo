@@ -1,19 +1,30 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-configMapGenerator:
-  - name: cm-kustomize-vars
-    envs:
-      - environment.properties
+# configMapGenerator:
+#   - name: cm-kustomize-vars
+#     envs: [environment.properties]
 
-vars:
-  - name: CLUSTER_SELECTOR_LABEL
-    objref:
+# vars:
+# - name: CLUSTER_SELECTOR_LABEL
+#   objref: { kind: ConfigMap, name: cm-kustomize-vars, apiVersion: v1 }
+#   fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
+
+configMapGenerator:
+  - name: my-config
+    literals:
+      - CLUSTER_SELECTOR_LABEL=local-cluster
+
+replacements:
+  - source:
       kind: ConfigMap
-      name: cm-kustomize-vars
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.CLUSTER_SELECTOR_LABEL
+      name: my-config
+      fieldPath: data.CLUSTER_SELECTOR_LABEL
+    targets:
+      - select:
+          kind: Policy
+        fieldPaths:
+          - spec.policy-templates[0].objectDefinition.spec.object-templates[0].objectDefinition.metadata.labels.mylabel
 
 resources:
   - polycy-ns-cartella-3.yaml
