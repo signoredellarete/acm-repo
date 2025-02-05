@@ -3,12 +3,17 @@ kind: Kustomization
 
 configMapGenerator:
   - name: cm-kustomize-vars
-    envs: [environment.properties]
+    envs:
+      - environment.properties
 
 vars:
-- name: CLUSTER_SELECTOR_LABEL
-  objref: { kind: ConfigMap, name: cm-kustomize-vars, apiVersion: v1 }
-  fieldref: { fieldpath: data.CLUSTER_SELECTOR_LABEL }
+  - name: CLUSTER_SELECTOR_LABEL
+    objref:
+      kind: ConfigMap
+      name: cm-kustomize-vars
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.CLUSTER_SELECTOR_LABEL
 
 resources:
   - polycy-ns-cartella-3.yaml
