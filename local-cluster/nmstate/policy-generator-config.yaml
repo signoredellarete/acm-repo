@@ -18,4 +18,4 @@ policies:
     manifests:
       - path: instal-nmstate-operator-placement.yaml
       - path: instal-nmstate-operator-placementbinding.yaml
-      - path: policy-generator-config.yaml
+      - path: nmstate-operator.yaml
