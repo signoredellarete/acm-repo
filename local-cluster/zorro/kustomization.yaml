@@ -24,7 +24,7 @@ replacements:
       - select:
           kind: Policy
         fieldPaths:
-          - spec.policy-templates[0].objectDefinition.spec.object-templates[0].objectDefinition.metadata.labels.mylabel
+          - spec.policy-templates.0.objectDefinition.spec.object-templates.0.objectDefinition.metadata.labels.mylabel
 
 resources:
   - polycy-ns-cartella-3.yaml
