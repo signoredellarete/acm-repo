@@ -20,7 +20,7 @@ spec:
             metadata:
               labels:
                 kubernetes.io/metadata.name: test
-                mylabel: $(CLUSTER_SELECTOR_LABEL)
+                mylabel: ${CLUSTER_SELECTOR_LABEL}
               name: cartella-3
         pruneObjectBehavior: DeleteIfCreated
         remediationAction: enforce
