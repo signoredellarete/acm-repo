@@ -47,6 +47,7 @@ kind: Kustomization
 resources:
 - overcommitment
 - kubeletconfig
+- nmstate
 #- zorro
 #- test
 #- logging
