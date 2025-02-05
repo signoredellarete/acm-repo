@@ -1,0 +1,14 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: instal-nmstate-operator-placementbinding
+  namespace: policies
+placementRef:
+  name: instal-nmstate-operator-placement
+  apiGroup: cluster.open-cluster-management.io
+  kind: Placement
+subjects:
+  - name: instal-nmstate-operator
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
