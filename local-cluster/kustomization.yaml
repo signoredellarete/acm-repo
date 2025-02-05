@@ -47,6 +47,6 @@ kind: Kustomization
 resources:
 - overcommitment
 - kubeletconfig
-#- zorro
+- zorro
 #- test
 #- logging
