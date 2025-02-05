@@ -45,8 +45,8 @@ kind: Kustomization
 #           - metadata.labels.origin
 
 resources:
-- overcommitment
-- kubeletconfig
+#- overcommitment
+#- kubeletconfig
 - nmstate
 #- zorro
 #- test
