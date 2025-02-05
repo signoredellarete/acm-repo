@@ -3,6 +3,8 @@ kind: Policy
 metadata:
   name: polycy-ns-cartella-3
   namespace: policies
+  labels: 
+    origin: ${POLICY_LABEL_ORIGIN}
 spec:
   disabled: false
   policy-templates:
