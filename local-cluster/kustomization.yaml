@@ -32,6 +32,17 @@ configMapGenerator:
     literals:
       - POLICY_LABEL_ORIGIN=kustomize
 
+replacements:
+  - source:
+      kind: ConfigMap
+      name: cm-policy-vars
+      fieldPath: data.POLICY_LABEL_ORIGIN
+    targets:
+      - select:
+          kind: Policy
+        fieldPaths:
+          - metadata.labels.origin
+
 resources:
 - overcommitment
 - kubeletconfig

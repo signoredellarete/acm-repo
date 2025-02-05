@@ -25,15 +25,7 @@ replacements:
           kind: Policy
         fieldPaths:
           - spec.policy-templates.0.objectDefinition.spec.object-templates.0.objectDefinition.metadata.labels.mylabel
-  - source:
-      kind: ConfigMap
-      name: cm-policy-vars
-      fieldPath: data.POLICY_LABEL_ORIGIN
-    targets:
-      - select:
-          kind: Policy
-        fieldPaths:
-          - metadata.labels.origin
+
 
 resources:
   - polycy-ns-cartella-3.yaml
